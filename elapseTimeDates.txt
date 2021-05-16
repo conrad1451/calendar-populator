@@ -1,0 +1,127 @@
+from datetime import datetime
+ 
+ 
+# ---------------------- MY STANDARD HELPER FUNCTIONS -------------------- #
+
+# returns true if 'theChar' is found in 'theStr'
+foundInText(theStr, theChar):
+    # returns true if 'theChar' is found in 'str'
+    return theStr.find(theChar) != -1;
+
+# returns true if 'substr' is found in 'theStr'
+foundInText(theStr, substr):
+    # returns true if 'substr' is found in 'str'
+    return theStr.find(substr) != -1;
+
+# note that all string methods return new values
+# source: https://www.w3schools.com/python/python_ref_string.asp
+
+# things that are standard in python library (but not C++)
+# "==" to compare two strings to determine if their characters are equal
+# casefold() to convert a string to lower case
+# lower() to convert a string to lower case
+# islower() to determine if all the characters in a stirng are lowercase
+# isnumeric() to determine if all the characters in a string are numeric 
+ 
+# ----------------------------------------------------------------------- # 
+ 
+ 
+ 
+def elapsedTimeBetweenTwoDates(firstTime, secondTime):
+    fTime = datetime.strptime(firstTime, '%m/%d/%Y')
+    sTime = datetime.strptime(secondTime, '%m/%d/%Y')
+    
+    print("\n")
+    
+    print("the first time is: ", fTime)
+    print("and the second time is: ", sTime)
+    
+
+
+def splitIntoStringList(theStr, theChar):
+    # takes in a string called "theStr" and character called "theChar" and returns a list of strings
+    
+    theList = []
+    startPos = 0
+    endPos = 0
+
+    while (foundInText(theStr, charSplitter) and endPos != -1):
+    
+        endPos = theStr.find(charSplitter, startPos)
+        if (endPos != -1)
+        
+            theList.push_back(theStr.substr(startPos, endPos))
+            startPos = endPos + 1
+        
+
+
+    return theList;
+    
+    
+
+def automaticEventCreation(inputStr)
+{
+    # takes in a string called "inputStr" and returns a CalEvent
+    auto stringList = splitIntoStringVector(inputStr, ',');
+
+        size_t firstTimeSplitPos, secondTimeSplitPos;
+        std::string theDay, stringifiedBeginTime, stringifiedEndTime;
+        size_t beginTime = 0;
+        size_t endTime = 0;
+
+        auto name = stringList.at(0);
+        auto firstDateToSplit = stringList.at(1);
+        auto secondDateToSplit = stringList.at(2);
+
+        if(!stringList.empty())
+        {
+        if (foundInText(firstDateToSplit, "2021")) {
+            firstTimeSplitPos = firstDateToSplit.find("2021");
+            theDay = firstDateToSplit.substr(0, firstTimeSplitPos - 1);
+            stringifiedBeginTime = firstDateToSplit.substr(firstTimeSplitPos);
+
+            beginTime = std::stoi(stringifiedBeginTime);
+        } else {
+# I’m not processing dates before Jan 1 2021. Too hard.
+        }
+
+
+        if (foundInText(secondDateToSplit, "2021")) {
+            secondTimeSplitPos = firstDateToSplit.find("2021");
+#        theDay = secondDateToSplit.substr(0, secondTimeSplitPos-1);
+            stringifiedEndTime = secondDateToSplit.substr(secondTimeSplitPos);
+
+            endTime = std::stoi(stringifiedEndTime);
+        } else {
+# I’m not processing dates before Jan 1 2021. Too hard.
+        }
+
+# call function grabDay in here to grab day of week and store in day
+/*
+Following C++ code concerning time is limited to C++20, which I am having trouble to download
+- receive strings and transform them into date objects
+- determine the difference in days between two date objects
+- determine the day of the week of a particular date
+*/
+
+# call function grabTime in here  to grab time and store in beginTime or endTime
+/*
+Function grab time makes two substrings (one on each side of the colon) and
+ converts those substrings into size_t (using int to size_t casting if necessary)
+ before doing the math to store as a 3 or 4 dig number representing time
+ (like how you did it for app inventor)
+*/
+        }
+    CalEvent testCalEvent(name, lowerCaseString(theDay), beginTime, endTime, false);
+    return testCalEvent;
+}
+
+
+
+
+    
+a = input("enter first time: ")
+b = input("enter second time: ")
+
+
+elapsedTimeBetweenTwoDates(a, b)
